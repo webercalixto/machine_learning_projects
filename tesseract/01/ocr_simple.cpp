@@ -1,37 +1,34 @@
 /** Source from https://www.learnopencv.com/deep-learning-based-text-recognition-ocr-using-tesseract-and-opencv/?ck_subscriber_id=487426114**/
-#include <string>
-#include <tesseract/baseapi.h>
-#include <leptonica/allheaders.h>
-#include <opencv2/opencv.hpp>
+#include "global.hpp"
 
 using namespace std;
 using namespace cv;
 
 int main(int argc, char* argv[])
 {
+	(void)argc;
     string outText;
     string imPath = argv[1];
 
-    // Create Tesseract object
     tesseract::TessBaseAPI *ocr = new tesseract::TessBaseAPI();
 
-    // Initialize tesseract to use English (eng) and the LSTM OCR engine.
     ocr->Init(NULL, "eng", tesseract::OEM_LSTM_ONLY);
 
-    // Set Page segmentation mode to PSM_AUTO (3)
     ocr->SetPageSegMode(tesseract::PSM_AUTO);
+    SAVE_LOG("Lendo imagem %s", imPath.c_str());
 
-    // Open input image using OpenCV
     Mat im = cv::imread(imPath, IMREAD_COLOR);
+    SAVE_LOG("IMAGEM TEM TAMANHO %d X %d ",im.cols,im.rows);
 
-    // Set image data
     ocr->SetImage(im.data, im.cols, im.rows, 3, im.step);
+    SAVE_LOG("ocr->SetImage ");
 
-    // Run Tesseract OCR on image
     outText = string(ocr->GetUTF8Text());
 
-    // print recognized text
-    cout << outText << endl; // Destroy used object and release memory ocr->End();
+    SAVE_LOG("%s",outText.c_str());
+    namedWindow( "Display window", WINDOW_AUTOSIZE );// Create a window for display.
+    imshow( "Display window", im );
+    waitKey(0);
 
     return EXIT_SUCCESS;
 }
