@@ -1,5 +1,5 @@
 /** Source from https://www.learnopencv.com/deep-learning-based-text-recognition-ocr-using-tesseract-and-opencv/?ck_subscriber_id=487426114**/
-#include "global.hpp"
+#include "../ocr_simple/global.hpp"
 
 using namespace std;
 using namespace cv;
@@ -26,6 +26,7 @@ int main(int argc, char* argv[])
     outText = string(ocr->GetUTF8Text());
 
     SAVE_LOG("%s",outText.c_str());
+    ocr->End();
     namedWindow( "Display window", WINDOW_AUTOSIZE );// Create a window for display.
     imshow( "Display window", im );
     waitKey(0);
