@@ -1,5 +1,6 @@
 cmake_minimum_required (VERSION 2.6)
 project (machine_learning)
+set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -Werror")
 file(GLOB ocr_simple_SRCS

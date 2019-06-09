@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 
     tesseract::TessBaseAPI *ocr = new tesseract::TessBaseAPI();
 
-    ocr->Init(NULL, "eng", tesseract::OEM_LSTM_ONLY);
+    ocr->Init(NULL, "por", tesseract::OEM_LSTM_ONLY);
 
     ocr->SetPageSegMode(tesseract::PSM_AUTO);
     SAVE_LOG("Lendo imagem %s", imPath.c_str());
