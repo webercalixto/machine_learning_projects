@@ -3,7 +3,7 @@ project (machine_learning)
 find_package( OpenCV REQUIRED )
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
-set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -Werror")
+#set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -Werror")
 set(BIBLIOTECAS ${OpenCV_LIBS} tesseract)
 file(GLOB ocr_simple_SRCS
         "${PROJECT_SOURCE_DIR}/tesseract/01-ocr_simple/*"
