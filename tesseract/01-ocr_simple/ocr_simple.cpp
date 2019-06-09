@@ -1,5 +1,5 @@
 /** Source from https://www.learnopencv.com/deep-learning-based-text-recognition-ocr-using-tesseract-and-opencv/?ck_subscriber_id=487426114**/
-#include "../ocr_simple/global.hpp"
+#include "../01-ocr_simple/global.hpp"
 
 using namespace std;
 using namespace cv;

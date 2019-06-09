@@ -4,4 +4,4 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-#include "../ocr_simple/macros.hpp"
+#include "../01-ocr_simple/macros.hpp"
