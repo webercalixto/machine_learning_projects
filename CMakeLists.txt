@@ -11,9 +11,14 @@ file(GLOB ocr_simple_SRCS
 file(GLOB threshold_simple_SRCS
         "${PROJECT_SOURCE_DIR}/opencv/01-threshold_simple/*"
         )
-        
+    
+file(GLOB threshold_blobs_SRCS
+        "${PROJECT_SOURCE_DIR}/opencv/02-threshold_blobs/*"
+        )    
 add_executable(ocr_simple ${ocr_simple_SRCS})
 add_executable(threshold_simple ${threshold_simple_SRCS})
+add_executable(threshold_blobs ${threshold_blobs_SRCS})
 
 target_link_libraries(ocr_simple ${BIBLIOTECAS})
 target_link_libraries(threshold_simple ${BIBLIOTECAS})
+target_link_libraries(threshold_blobs ${BIBLIOTECAS})
