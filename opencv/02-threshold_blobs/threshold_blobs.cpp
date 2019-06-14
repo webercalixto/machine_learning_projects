@@ -67,7 +67,10 @@ void Threshold_Demo( int, void* )
 	params.minArea = 1;
 	Mat imerode = dst.clone();
 	erode(dst,imerode,Mat());
+	Mat imdilate = imerode.clone();
+	dilate(imerode,imdilate,Mat());
 	hconcat(dst, imerode, dst);
+	hconcat(dst, imdilate, dst);
 	imshow( window_name, dst );
 
 }
