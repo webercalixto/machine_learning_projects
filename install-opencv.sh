@@ -53,6 +53,8 @@ sudo apt-get install -y ant default-jdk
 # Documentation:
 sudo apt-get install -y doxygen
 
+# Tesseract
+sudo apt-get install -y tesseract-ocr libtesseract-dev libleptonica-dev
 
 # 3. INSTALL THE LIBRARY
 
